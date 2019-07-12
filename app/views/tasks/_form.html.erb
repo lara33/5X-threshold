@@ -1,0 +1,31 @@
+<%= form_for(@task) do |f| %>
+  <div>
+    <%= f.label :title, "任務標題" %>
+    <%= f.text_field :title %><br />
+  </div>
+  
+  <div>
+    <%= f.label :description, "描述" %>
+    <%= f.text_area :description %><br />
+  </div>
+  <div>
+    <%= f.label :start_time, "開始時間" %>
+    <%= f.datetime_select :start_time %><br />
+  </div>
+  <div>
+    <%= f.label :end_time,"結束時間"%>
+    <%= f.datetime_select :end_time %><br />
+  </div>
+  <div>
+    <%= f.label :status, "目前狀態" %>
+    <%# byebug %>
+    <%= f.radio_button :status, '1' %>待處理<%= f.radio_button :status, '2' %>進行中<%= f.radio_button :status, '3' %>已完成<br />
+  </div>
+  <div>
+    <%= f.label :priority, "優先" %>
+    <%= f.radio_button :priority, '1' %>低<%= f.radio_button :priority, '2' %>中<%= f.radio_button :priority, '3' %>高<br />
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<%end%>
